@@ -106,11 +106,14 @@ function renderWeatherInfo(weatherInfo) {
     const windspeed = document.querySelector("[data-windspeed]");
     const humidity = document.querySelector("[data-humidity]");
     const cloudiness = document.querySelector("[data-cloudiness]");
+    const quality = document.querySelector("[data-airQuality]");
+    const sunrise = document.querySelector("[data-sunrise]");
+    const sunset = document.querySelector("[data-sunset]");
 
     console.log(weatherInfo);
 
     //fetch values from weatherINfo object and put it UI elements
-    cityName.innerText = weatherInfo?.name
+    cityName.innerText = weatherInfo?.name;
     countryIcon.src = `https://flagcdn.com/144x108/${weatherInfo?.sys?.country.toLowerCase()}.png`;
     desc.innerText = weatherInfo?.weather?.[0]?.description;
     weatherIcon.src = `http://openweathermap.org/img/w/${weatherInfo?.weather?.[0]?.icon}.png`;
@@ -118,8 +121,9 @@ function renderWeatherInfo(weatherInfo) {
     windspeed.innerText = `${weatherInfo?.wind?.speed} м/с`;
     humidity.innerText = `${weatherInfo?.main?.humidity}%`;
     cloudiness.innerText = `${weatherInfo?.clouds?.all}%`;
-
-
+    quality.innerText = `${weatherInfo?.main?.pressure} гПа`;
+    sunrise.innerText = `${weatherInfo?.sys?.sunrise} год`;
+    sunset.innerText = `${weatherInfo?.sys?.sunset} год`;
 }
 
 function getLocation() {
@@ -171,8 +175,10 @@ async function fetchSearchWeatherInfo(city) {
         loadingScreen.classList.remove("active");
         userInfoContainer.classList.add("active");
         renderWeatherInfo(data);
+        console.log(JSON.stringify(response))
     }
     catch(err) {
         //hW
     }
               }
+           
