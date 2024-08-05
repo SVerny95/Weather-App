@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="glass-container" id="glass"></div>
 
     <div class="wrapper">
+        <!-- This was made with GlassGenerator.netlify.app -->
 
         <h1>Weather App</h1>
 
@@ -26,24 +27,25 @@
 
             <!-- grant location container-->
             <div class="sub-container grant-location-container">
-                <img src="./assets/location.png" width="80" height="80" loading="lazy">
-                <p>Grant Location Access</p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve" width="94" height="94" stroke="#000" stroke-width=".005"><path style="fill:#ffd652" d="M508.646 214.577C488.846 92.893 383.28 0 256 0 114.615 0 0 114.615 0 256s114.615 256 256 256a258.32 258.32 0 0 0 31.465-1.927l221.181-295.496z"/><path style="fill:#fdba4c" d="M512 256c0-14.106-1.159-27.937-3.354-41.423L377.992 83.921 256 478.609l31.465 31.465C414.004 494.563 512 386.731 512 256z"/><path style="fill:#4f5aa8" d="m256 33.391-55.652 172.522L256 478.609l133.767-163.751c24.223-29.706 38.755-67.626 38.755-108.945 0-95.281-77.241-172.522-172.522-172.522z"/><path style="fill:#4a75c3" d="M83.478 205.913c0 41.318 14.532 79.239 38.755 108.945L256 478.609V33.391c-95.281 0-172.522 77.241-172.522 172.522z"/><path style="fill:#4a75c3" d="m255.998 72.347-75.493 133.565 75.493 133.565c73.766 0 133.565-59.799 133.565-133.565S329.764 72.347 255.998 72.347z"/><path style="fill:#6faee8" d="M122.433 205.912c0 73.766 59.799 133.565 133.565 133.565V72.347c-73.766 0-133.565 59.799-133.565 133.565z"/><path style="fill:#f7edbc" d="m255.998 94.608-62.911 111.304 62.911 111.304c61.471 0 111.304-49.833 111.304-111.304S317.469 94.608 255.998 94.608z"/><path style="fill:#fff" d="M144.693 205.912c0 61.471 49.833 111.304 111.304 111.304V94.608c-61.472 0-111.304 49.833-111.304 111.304z"/><path style="fill:#999" d="M300.519 146.406v52.87h-22.261v-52.87c0-6.15 4.981-11.13 11.13-11.13 6.151 0 11.131 4.981 11.131 11.13z"/><path style="fill:#b2b2b2" d="M233.737 146.406v52.87h-22.261v-52.87c0-6.15 4.981-11.13 11.13-11.13s11.131 4.981 11.131 11.13z"/><path style="fill:#fdba4c" d="m227.431 194.068 28.567 72.349h54.795L322.78 205.2z"/><path style="fill:#ffd652" d="m256 194.068-.002 72.349h-54.796L189.215 205.2z"/><path style="fill:#4f5aa8" d="M337.25 182.939V205.2l-81.252-.002-8.011-11.129 8.011-11.131z"/><path style="fill:#4a75c3" d="M174.748 182.94H256v22.261h-81.252z"/></svg>
+                <p>Інфо про погоду</p>
                 <p>Надайте доступ для отримання інформації про погоду</p>
-                <button class="btn" data-grantAccess>Надайте доступ</button>
+                <button class="btn" data-grantAccess>Ваша геолокація</button>
             </div>
 
             <!-- search form -> form-container-->
             <form class="form-container" data-searchForm>
-                <input placeholder="Search for City..." data-searchInput>
-                <button class="btn" type="submit">
-                    <img src="./assets/search.png"  width="20" height="20" loading="lazy">
+                <input placeholder="Пошук за містом..." data-searchInput>
+                <button class="btn" type="submit" style="background-color: transparent;">
+                    <svg width="20" height="20" viewBox="0 0 1024 1024" class="icon" xmlns="http://www.w3.org/2000/svg"><path d="m622.4 682.453 60.33-60.309 256.406 256.405-60.33 60.31z" fill="#616161"/><path d="M85.333 426.667a341.333 341.333 0 1 0 682.667 0 341.333 341.333 0 1 0-682.667 0Z" fill="#616161"/><path d="m692.267 753.92 60.309-60.33 185.515 185.514-60.331 60.33z" fill="#37474F"/><path d="M149.333 426.667a277.333 277.333 0 1 0 554.667 0 277.333 277.333 0 1 0-554.667 0Z" fill="#64B5F6"/><path d="M573.867 302.933c-36.267-42.666-89.6-68.266-147.2-68.266s-110.934 25.6-147.2 68.266c-8.534 8.534-6.4 23.467 2.133 29.867 8.533 8.533 23.467 6.4 29.867-2.133 29.866-34.134 70.4-53.334 115.2-53.334s85.333 19.2 115.2 53.334c4.266 4.266 10.666 8.533 17.066 8.533 4.267 0 10.667-2.133 12.8-4.267 8.534-8.533 8.534-23.466 2.134-32z" fill="#BBDEFB"/></svg>
                 </button>
             </form>
 
             <!--- loading screen container -->
             <div class="sub-container loading-container">
-                <img src="./assets/loading.gif" width="150" height="150">
-                <p>Loading</p>
+                <svg width="90px" height="90px" enable-background="new 0 0 100 100" viewBox="0 0 100 100" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m31.6 3.5c-25.7 10.1-38.2 39.2-28.1 64.9s39.2 38.3 64.9 28.1l-3.1-7.9c-21.3 8.4-45.4-2-53.8-23.3s2-45.4 23.3-53.8l-3.2-8z" fill="#fff"><animateTransform attributeName="transform" attributeType="XML" dur="2s" from="0 50 50" repeatCount="indefinite" to="360 50 50" type="rotate"/></path><path d="m42.3 39.6c5.7-4.3 13.9-3.1 18.1 2.7 4.3 5.7 3.1 13.9-2.7 18.1l4.1 5.5c8.8-6.5 10.6-19 4.1-27.7-6.5-8.8-19-10.6-27.7-4.1l4.1 5.5z" fill="#fff"><animateTransform attributeName="transform" attributeType="XML" dur="1s" from="0 50 50" repeatCount="indefinite" to="-360 50 50" type="rotate"/></path><path d="m82 35.7c-7.9-17.7-28.6-25.6-46.3-17.7s-25.6 28.6-17.7 46.3l7.6-3.4c-6-13.5 0-29.3 13.5-35.3s29.3 0 35.3 13.5l7.6-3.4z" fill="#fff"><animateTransform attributeName="transform" attributeType="XML" dur="2s" from="0 50 50" repeatCount="indefinite" to="360 50 50" type="rotate"/></path></svg>
+        
+                <p>Зачекайте, будь ласка</p>
             </div>
 
             <!-- show weather info -->
@@ -67,21 +69,21 @@
 
                     <!--card 1-->
                     <div class="parameter">
-                        <img src="./assets/wind.png" >
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g fill="#1C274C"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 5.5A3.25 3.25 0 1 1 9.5 8.75H3a.75.75 0 0 1 0-1.5h6.5A1.75 1.75 0 1 0 7.75 5.5v.357a.75.75 0 1 1-1.5 0V5.5Z"/><path opacity=".4" d="M3.25 14a.75.75 0 0 1 .75-.75h14.5a4.25 4.25 0 1 1-4.25 4.25V17a.75.75 0 0 1 1.5 0v.5a2.75 2.75 0 1 0 2.75-2.75H4a.75.75 0 0 1-.75-.75Z"/><path opacity=".7" d="M14.25 7.5a4.25 4.25 0 1 1 4.25 4.25H2a.75.75 0 0 1 0-1.5h16.5a2.75 2.75 0 1 0-2.75-2.75V8a.75.75 0 0 1-1.5 0v-.5Z"/></g></svg>
                         <p>Швидкість вітру</p>
                         <p data-windspeed></p>
                     </div>
 
                     <!--card 2-->
                     <div class="parameter">
-                        <img src="./assets/humidity.png" >
+                        <svg width="64" height="64" viewBox="0 0 1024 1024" class="icon" xmlns="http://www.w3.org/2000/svg"><path d="M339.7 882.5C196.6 882.5 80.2 766.1 80.2 623c0-133.2 204.8-395.1 228.2-424.5 5.8-7.3 14.5-11.6 23.8-11.7 9.4-.1 18.1 3.9 24.1 11 1.5 1.8 37.7 44.8 82.2 105.2 10.1 13.8 7.2 33.2-6.6 43.3-13.8 10.1-33.2 7.2-43.3-6.6-21.3-29-40.9-54-55.3-72.1-69.2 92-191.2 271.5-191.2 355.4 0 108.9 88.6 197.6 197.6 197.6S537.3 731.9 537.3 623c0-17.1 13.9-31 31-31s31 13.9 31 31c-.1 143.1-116.5 259.5-259.6 259.5z" fill="#1A1A1A"/><path d="M363.7 468.8c-27.9 59.7-46.8 115.7-46.8 158.4 0 164.6 133.4 298 298 298s298-133.4 298-298c0-12.8-1.9-26.9-5.5-41.9-327.2 33.9-284.9-194.9-543.7-116.5z" fill="#0077b3"/><path d="M333.6 567.6c-38.2 239.9 123 357.7 287.3 357.7 92.8 0 144.9-12.1 199.6-78.6-261.5 20.7-428.7-99.2-486.9-279.1z" fill="#005e99"/><path d="M614.9 956.1C433.5 956.1 286 808.5 286 627.2c0-173.4 283.4-532.4 295.5-547.6 5.8-7.3 14.5-11.6 23.8-11.7 9.3-.1 18.1 3.9 24.1 11 2 2.3 49 58.2 106.8 136.6 10.1 13.8 7.2 33.2-6.6 43.3-13.8 10.1-33.2 7.2-43.3-6.6-31.8-43.2-60.6-79.8-79.9-103.7C517 266.1 347.9 512.3 347.9 627.2c0 147.2 119.8 267 267 267s267-119.8 267-267c0-29.7-13.2-87.9-76.4-196.2-8.6-14.8-3.6-33.7 11.2-42.3 14.8-8.6 33.7-3.6 42.3 11.2 57.1 97.9 84.8 172.2 84.8 227.4 0 181.3-147.6 328.8-328.9 328.8z" fill="#1A1A1A"/></svg>
                         <p>Вологість</p>
                         <p data-humidity></p>
                     </div>
 
                     <!--card 3-->
                     <div class="parameter">
-                        <img src="./assets/cloud.png" >
+                        <svg width="64" height="64" viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.636 23.273c6.427 0 11.637-5.21 11.637-11.637C23.273 5.21 18.063 0 11.636 0 5.21 0 0 5.21 0 11.636c0 6.427 5.21 11.637 11.636 11.637Z" fill="url(#a)"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17.455 23.273a7.321 7.321 0 0 0-.313-2.111 7.343 7.343 0 0 0-.913-1.93 7.323 7.323 0 0 0-1.715-1.8 7.223 7.223 0 0 0-1.882-1.007 7.22 7.22 0 0 0-2.093-.416 7.201 7.201 0 0 0-2.124.209 7.185 7.185 0 0 0-1.661.64 7.252 7.252 0 0 0-2.81 2.676 7.263 7.263 0 0 0-.895 5.158 7.294 7.294 0 0 0 1.511 3.195 7.288 7.288 0 0 0 3.51 2.345 7.304 7.304 0 0 0 2.112.314h11.636v-7.273h-4.363Z" fill="url(#b)"/><path d="M21.819 30.546C27.442 30.546 32 25.986 32 20.364c0-5.624-4.558-10.182-10.181-10.182-5.624 0-10.182 4.558-10.182 10.182 0 5.623 4.558 10.181 10.181 10.181Z" fill="url(#c)"/><defs><radialGradient id="a" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(58.625 -1.649 11.396) scale(17.2183)"><stop stop-color="#FFDB00"/><stop offset="1" stop-color="#FB0"/></radialGradient><radialGradient id="b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(43.775 -20.962 17.529) scale(11.8747 15.4371)"><stop stop-color="#EFFCFF"/><stop offset="1" stop-color="#A5F2FF"/></radialGradient><radialGradient id="c" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(73.544 -1.044 18.52) scale(16.9656)"><stop stop-color="#fff"/><stop offset="1" stop-color="#AEF1FD"/></radialGradient></defs></svg>
                         <p>Хмарність</p>
                         <p data-cloudiness></p>
                     </div>
@@ -99,6 +101,6 @@
     </div>
 
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
