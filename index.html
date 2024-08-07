@@ -1,124 +1,175 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="glass-container" id="glass"></div>
-
     <div class="wrapper">
-        <!-- This was made with GlassGenerator.netlify.app -->
-
-        <h1>Weather App</h1>
-
-        <div class="tab-container">
-            <p class="tab" data-userWeather>Ваша погода</p>
-            <p class="tab" data-searchWeather>Пошук локації</p>
-        </div>
-
-        <div class="weather-container">
-
-            <!-- grant location container-->
-            <div class="sub-container grant-location-container">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve" width="94" height="94" stroke="#000" stroke-width=".005"><path style="fill:#ffd652" d="M508.646 214.577C488.846 92.893 383.28 0 256 0 114.615 0 0 114.615 0 256s114.615 256 256 256a258.32 258.32 0 0 0 31.465-1.927l221.181-295.496z"/><path style="fill:#fdba4c" d="M512 256c0-14.106-1.159-27.937-3.354-41.423L377.992 83.921 256 478.609l31.465 31.465C414.004 494.563 512 386.731 512 256z"/><path style="fill:#4f5aa8" d="m256 33.391-55.652 172.522L256 478.609l133.767-163.751c24.223-29.706 38.755-67.626 38.755-108.945 0-95.281-77.241-172.522-172.522-172.522z"/><path style="fill:#4a75c3" d="M83.478 205.913c0 41.318 14.532 79.239 38.755 108.945L256 478.609V33.391c-95.281 0-172.522 77.241-172.522 172.522z"/><path style="fill:#4a75c3" d="m255.998 72.347-75.493 133.565 75.493 133.565c73.766 0 133.565-59.799 133.565-133.565S329.764 72.347 255.998 72.347z"/><path style="fill:#6faee8" d="M122.433 205.912c0 73.766 59.799 133.565 133.565 133.565V72.347c-73.766 0-133.565 59.799-133.565 133.565z"/><path style="fill:#f7edbc" d="m255.998 94.608-62.911 111.304 62.911 111.304c61.471 0 111.304-49.833 111.304-111.304S317.469 94.608 255.998 94.608z"/><path style="fill:#fff" d="M144.693 205.912c0 61.471 49.833 111.304 111.304 111.304V94.608c-61.472 0-111.304 49.833-111.304 111.304z"/><path style="fill:#999" d="M300.519 146.406v52.87h-22.261v-52.87c0-6.15 4.981-11.13 11.13-11.13 6.151 0 11.131 4.981 11.131 11.13z"/><path style="fill:#b2b2b2" d="M233.737 146.406v52.87h-22.261v-52.87c0-6.15 4.981-11.13 11.13-11.13s11.131 4.981 11.131 11.13z"/><path style="fill:#fdba4c" d="m227.431 194.068 28.567 72.349h54.795L322.78 205.2z"/><path style="fill:#ffd652" d="m256 194.068-.002 72.349h-54.796L189.215 205.2z"/><path style="fill:#4f5aa8" d="M337.25 182.939V205.2l-81.252-.002-8.011-11.129 8.011-11.131z"/><path style="fill:#4a75c3" d="M174.748 182.94H256v22.261h-81.252z"/></svg>
-                <p>Інфо про погоду</p>
-                <p>Надайте доступ для отримання інформації про погоду</p>
-                <button class="btn" data-grantAccess>Ваша геолокація</button>
-            </div>
-
-            <!-- search form -> form-container-->
-            <form class="form-container" data-searchForm>
-                <input placeholder="Пошук за містом..." data-searchInput>
-                <button class="btn" type="submit" style="background-color: transparent;">
-                    <svg width="20" height="20" viewBox="0 0 1024 1024" class="icon" xmlns="http://www.w3.org/2000/svg"><path d="m622.4 682.453 60.33-60.309 256.406 256.405-60.33 60.31z" fill="#616161"/><path d="M85.333 426.667a341.333 341.333 0 1 0 682.667 0 341.333 341.333 0 1 0-682.667 0Z" fill="#616161"/><path d="m692.267 753.92 60.309-60.33 185.515 185.514-60.331 60.33z" fill="#37474F"/><path d="M149.333 426.667a277.333 277.333 0 1 0 554.667 0 277.333 277.333 0 1 0-554.667 0Z" fill="#64B5F6"/><path d="M573.867 302.933c-36.267-42.666-89.6-68.266-147.2-68.266s-110.934 25.6-147.2 68.266c-8.534 8.534-6.4 23.467 2.133 29.867 8.533 8.533 23.467 6.4 29.867-2.133 29.866-34.134 70.4-53.334 115.2-53.334s85.333 19.2 115.2 53.334c4.266 4.266 10.666 8.533 17.066 8.533 4.267 0 10.667-2.133 12.8-4.267 8.534-8.533 8.534-23.466 2.134-32z" fill="#BBDEFB"/></svg>
-                </button>
-            </form>
-
-            <!--- loading screen container -->
-            <div class="sub-container loading-container">
-                <svg width="90px" height="90px" enable-background="new 0 0 100 100" viewBox="0 0 100 100" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m31.6 3.5c-25.7 10.1-38.2 39.2-28.1 64.9s39.2 38.3 64.9 28.1l-3.1-7.9c-21.3 8.4-45.4-2-53.8-23.3s2-45.4 23.3-53.8l-3.2-8z" fill="#fff"><animateTransform attributeName="transform" attributeType="XML" dur="2s" from="0 50 50" repeatCount="indefinite" to="360 50 50" type="rotate"/></path><path d="m42.3 39.6c5.7-4.3 13.9-3.1 18.1 2.7 4.3 5.7 3.1 13.9-2.7 18.1l4.1 5.5c8.8-6.5 10.6-19 4.1-27.7-6.5-8.8-19-10.6-27.7-4.1l4.1 5.5z" fill="#fff"><animateTransform attributeName="transform" attributeType="XML" dur="1s" from="0 50 50" repeatCount="indefinite" to="-360 50 50" type="rotate"/></path><path d="m82 35.7c-7.9-17.7-28.6-25.6-46.3-17.7s-25.6 28.6-17.7 46.3l7.6-3.4c-6-13.5 0-29.3 13.5-35.3s29.3 0 35.3 13.5l7.6-3.4z" fill="#fff"><animateTransform attributeName="transform" attributeType="XML" dur="2s" from="0 50 50" repeatCount="indefinite" to="360 50 50" type="rotate"/></path></svg>
-        
-                <p>Зачекайте, будь ласка</p>
-            </div>
-
-            <!-- show weather info -->
-            <div class="sub-container user-info-container">
-
-                <!--city name and Flag-->
-                <div class="name">
-                    <p data-cityName></p>
-                    <img data-countryIcon>
+        <div class="main-box">
+            <div class="main-box-item main-box-header">
+                <div class="main-box-header-top"></div>
+                <div class="main-box-header-bottom">
+                    <span class="v-hidden"></span>
+                    <div class="select-box">
+                        <div class="select-box-inner">
+                            <div class="select-box-field"></div>
+                            <div class="select-box-input">
+                                <input type="text" autocapitalize="none" autocomplete="off" tabindex="0" autocorrect="off" spellcheck="false">
+                            </div>
+                        </div>
+                        <div class="select-box-arrow">
+                            <span class="select-box-arrow-border"></span>
+                            <div class="arrow-box">
+                                <svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="arrow-svg"><path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- weather descriptuion-->
-                <p data-weatherDesc></p>
-                <!--weather Icon-->
-                <img data-weatherIcon>
-                <!--temperature-->
-                <p data-temp></p>
-
-                <!--3 cards - parameters-->
-                <div class="parameter-container">
-
-                    <!--card 1-->
-                    <div class="parameter">
-                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g fill="#1C274C"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 5.5A3.25 3.25 0 1 1 9.5 8.75H3a.75.75 0 0 1 0-1.5h6.5A1.75 1.75 0 1 0 7.75 5.5v.357a.75.75 0 1 1-1.5 0V5.5Z"/><path opacity=".4" d="M3.25 14a.75.75 0 0 1 .75-.75h14.5a4.25 4.25 0 1 1-4.25 4.25V17a.75.75 0 0 1 1.5 0v.5a2.75 2.75 0 1 0 2.75-2.75H4a.75.75 0 0 1-.75-.75Z"/><path opacity=".7" d="M14.25 7.5a4.25 4.25 0 1 1 4.25 4.25H2a.75.75 0 0 1 0-1.5h16.5a2.75 2.75 0 1 0-2.75-2.75V8a.75.75 0 0 1-1.5 0v-.5Z"/></g></svg>
-                        <p>Швидкість вітру</p>
-                        <p data-windspeed></p>
-                    </div>
-
-                    <!--card 2-->
-                    <div class="parameter">
-                        <svg width="64" height="64" viewBox="0 0 1024 1024" class="icon" xmlns="http://www.w3.org/2000/svg"><path d="M339.7 882.5C196.6 882.5 80.2 766.1 80.2 623c0-133.2 204.8-395.1 228.2-424.5 5.8-7.3 14.5-11.6 23.8-11.7 9.4-.1 18.1 3.9 24.1 11 1.5 1.8 37.7 44.8 82.2 105.2 10.1 13.8 7.2 33.2-6.6 43.3-13.8 10.1-33.2 7.2-43.3-6.6-21.3-29-40.9-54-55.3-72.1-69.2 92-191.2 271.5-191.2 355.4 0 108.9 88.6 197.6 197.6 197.6S537.3 731.9 537.3 623c0-17.1 13.9-31 31-31s31 13.9 31 31c-.1 143.1-116.5 259.5-259.6 259.5z" fill="#1A1A1A"/><path d="M363.7 468.8c-27.9 59.7-46.8 115.7-46.8 158.4 0 164.6 133.4 298 298 298s298-133.4 298-298c0-12.8-1.9-26.9-5.5-41.9-327.2 33.9-284.9-194.9-543.7-116.5z" fill="#0077b3"/><path d="M333.6 567.6c-38.2 239.9 123 357.7 287.3 357.7 92.8 0 144.9-12.1 199.6-78.6-261.5 20.7-428.7-99.2-486.9-279.1z" fill="#005e99"/><path d="M614.9 956.1C433.5 956.1 286 808.5 286 627.2c0-173.4 283.4-532.4 295.5-547.6 5.8-7.3 14.5-11.6 23.8-11.7 9.3-.1 18.1 3.9 24.1 11 2 2.3 49 58.2 106.8 136.6 10.1 13.8 7.2 33.2-6.6 43.3-13.8 10.1-33.2 7.2-43.3-6.6-31.8-43.2-60.6-79.8-79.9-103.7C517 266.1 347.9 512.3 347.9 627.2c0 147.2 119.8 267 267 267s267-119.8 267-267c0-29.7-13.2-87.9-76.4-196.2-8.6-14.8-3.6-33.7 11.2-42.3 14.8-8.6 33.7-3.6 42.3 11.2 57.1 97.9 84.8 172.2 84.8 227.4 0 181.3-147.6 328.8-328.9 328.8z" fill="#1A1A1A"/></svg>
-                        <p>Вологість</p>
-                        <p data-humidity></p>
-                    </div>
-
-                    <!--card 3-->
-                    <div class="parameter">
-                        <svg width="64" height="64" viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.636 23.273c6.427 0 11.637-5.21 11.637-11.637C23.273 5.21 18.063 0 11.636 0 5.21 0 0 5.21 0 11.636c0 6.427 5.21 11.637 11.636 11.637Z" fill="url(#a)"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17.455 23.273a7.321 7.321 0 0 0-.313-2.111 7.343 7.343 0 0 0-.913-1.93 7.323 7.323 0 0 0-1.715-1.8 7.223 7.223 0 0 0-1.882-1.007 7.22 7.22 0 0 0-2.093-.416 7.201 7.201 0 0 0-2.124.209 7.185 7.185 0 0 0-1.661.64 7.252 7.252 0 0 0-2.81 2.676 7.263 7.263 0 0 0-.895 5.158 7.294 7.294 0 0 0 1.511 3.195 7.288 7.288 0 0 0 3.51 2.345 7.304 7.304 0 0 0 2.112.314h11.636v-7.273h-4.363Z" fill="url(#b)"/><path d="M21.819 30.546C27.442 30.546 32 25.986 32 20.364c0-5.624-4.558-10.182-10.181-10.182-5.624 0-10.182 4.558-10.182 10.182 0 5.623 4.558 10.181 10.181 10.181Z" fill="url(#c)"/><defs><radialGradient id="a" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(58.625 -1.649 11.396) scale(17.2183)"><stop stop-color="#FFDB00"/><stop offset="1" stop-color="#FB0"/></radialGradient><radialGradient id="b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(43.775 -20.962 17.529) scale(11.8747 15.4371)"><stop stop-color="#EFFCFF"/><stop offset="1" stop-color="#A5F2FF"/></radialGradient><radialGradient id="c" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(73.544 -1.044 18.52) scale(16.9656)"><stop stop-color="#fff"/><stop offset="1" stop-color="#AEF1FD"/></radialGradient></defs></svg>
-                        <p>Хмарність</p>
-                        <p data-cloudiness></p>
-                    </div>
-
-                    <div class="parameter">
-                        <svg height="64" width="64" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 508 508" xml:space="preserve"><circle style="fill:#fd8469" cx="254" cy="254" r="254"/><path style="fill:#324a5e" d="M254 446.8c-106.4 0-192.8-86.4-192.8-192.8S147.6 61.2 254 61.2 446.8 147.6 446.8 254 360.4 446.8 254 446.8z"/><path style="fill:#e6e9ee" d="M406.8 262.8c0-2.8.4-6 .4-8.8 0-84.4-68.4-153.2-153.2-153.2-84.4 0-153.2 68.4-153.2 153.2 0 2.8 0 6 .4 8.8h305.6z"/><path style="fill:#ff7058" d="M204.8 166.4c-.8-1.2-2-1.6-3.2-.8-1.2.4-2 2-1.2 3.2l42 101.2c.4.4.4 1.2.8 1.6 3.2 5.2 10 6.8 15.2 3.6 5.2-3.2 6.8-10 3.6-15.2l-57.2-93.6z"/><circle style="fill:#ffd05b" cx="254" cy="262.8" r="27.6"/><path style="fill:#acb3ba" d="M254 136c-2.8 0-5.2-2.4-5.2-5.2V120c0-2.8 2.4-5.2 5.2-5.2 2.8 0 5.2 2.4 5.2 5.2v10.8c0 2.8-2.4 5.2-5.2 5.2zM337.6 170.4c-2-2-2-5.2 0-7.2l7.6-7.6c2-2 5.2-2 7.2 0s2 5.2 0 7.2l-7.6 7.6c-2.4 2-5.6 2-7.2 0zM156 156c2-2 5.2-2 7.2 0l7.6 7.6c2 2 2 5.2 0 7.2s-5.2 2-7.2 0l-7.6-7.6c-2-2-2-5.2 0-7.2zM208.8 144.8c-2.4 1.2-5.6 0-6.4-2.8l-4-10c-1.2-2.4 0-5.6 2.8-6.4 2.4-1.2 5.6 0 6.4 2.8l4 10c1.2 2.4 0 5.6-2.8 6.4zM363.2 208.8c-1.2-2.4 0-5.6 2.8-6.4l10-4c2.4-1.2 5.6 0 6.4 2.8 1.2 2.4 0 5.6-2.8 6.4l-10 4c-2.4 1.2-5.6 0-6.4-2.8zM299.2 144.8c-2.4-1.2-3.6-4-2.8-6.4l4-10c1.2-2.4 4-3.6 6.4-2.8 2.4 1.2 3.6 4 2.8 6.4l-4 10c-.8 2.8-4 4-6.4 2.8zM125.6 200.8c1.2-2.4 4-3.6 6.4-2.8l10 4c2.4 1.2 3.6 4 2.8 6.4-1.2 2.4-4 3.6-6.4 2.8l-10-4c-2.4-.8-3.6-3.6-2.8-6.4z"/><circle style="fill:#2b3b4e" cx="254" cy="82.4" r="10"/><circle style="fill:#2b3b4e" cx="254" cy="425.6" r="10"/><circle style="fill:#2b3b4e" cx="425.6" cy="254" r="10"/><circle style="fill:#2b3b4e" cx="82.4" cy="254" r="10"/></svg>
-                        <p>Тиск</p>
-                        <p data-airQuality></p>
-                    </div>
-
-                    <div class="parameter">
-                        <svg height="64" width="64" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve"><path style="fill:#b3d8f4" d="M318.061 418.909H193.939c-12.853 0-23.273 10.418-23.273 23.273 0 12.853 10.42 23.273 23.273 23.273h124.122c12.853 0 23.273-10.42 23.273-23.273-.001-12.855-10.421-23.273-23.273-23.273zM488.727 232.727H23.273C10.42 232.727 0 243.146 0 256c0 12.853 10.42 23.273 23.273 23.273H488.728C501.58 279.273 512 268.853 512 256c0-12.854-10.42-23.273-23.273-23.273z"/><path style="fill:#ffb655" d="M256 46.545c-98.383 0-178.424 80.04-178.424 178.424 0 2.586.068 5.174.178 7.758h356.492c.112-2.585.178-5.171.178-7.758 0-98.384-80.041-178.424-178.424-178.424z"/><path style="fill:#b3d8f4" d="M426.667 325.818H302.545c-12.853 0-23.273 10.418-23.273 23.273 0 12.853 10.42 23.273 23.273 23.273h124.121c12.853 0 23.273-10.42 23.273-23.273 0-12.854-10.42-23.273-23.272-23.273z"/><path style="fill:#ee8700" d="M77.576 224.97c0 2.586.068 5.174.178 7.758H256V46.545c-98.383 0-178.424 80.04-178.424 178.425z"/><path style="fill:#78b9eb" d="M107.132 279.273h-6.346c1.049.147 2.112.242 3.191.242 1.042 0 2.097-.098 3.155-.242zM124.368 232.727H23.273C10.42 232.727 0 243.146 0 256c0 12.853 10.42 23.273 23.273 23.273H256v-46.545H124.368zM170.667 442.182c0 12.853 10.42 23.273 23.273 23.273H256V418.91h-62.061c-12.852-.001-23.272 10.417-23.272 23.272zM62.061 349.091c0 12.853 10.42 23.273 23.273 23.273h124.121c12.853 0 23.273-10.42 23.273-23.273 0-12.854-10.42-23.273-23.273-23.273H85.333c-12.852 0-23.272 10.419-23.272 23.273z"/></svg>
-                        <p>Схід сонця</p>
-                        <p data-sunrise></p>
-                    </div>
-
-                    <div class="parameter">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 495" xml:space="preserve" width="64" height="64"><path style="fill:#ffe477" d="M207.5 405.75v-40h40v-100H0v153.5h247.5v-13.5h-40zm-60-110h80v40h-80v-40z"/><path style="fill:#ff5023" d="M416.318 225.75c-9.931-84.347-81.846-150-168.818-150v150h168.818z"/><path style="fill:#ff7956" d="M247.5 75.75c-86.972 0-158.887 65.653-168.818 150H247.5v-150zM147.5 295.75h80v40h-80z"/><path style="fill:#ff5023" d="M267.5 295.75h80v40h-80z"/><path style="fill:#ff7956" d="M207.5 365.75h80v40h-80z"/><path style="fill:#ffde55" d="M0 225.75v40h247.5v100h40v40h-40v13.5H495v-193.5H0zm347.5 110h-80v-40h80v40z"/></svg>
-                        <p>Захід сонця</p>
-                        <p data-sunset></p>
-                    </div>
-
-                </div>
-
-
             </div>
+            <div class="main-box-item info-box-current">
+                <div class="info-box-current-inner main-box-header">
+                    <div class="info-box-current-inner-box">
+                        <div class="container">
+                            <div class="main-box-item main-box-header">
+                                <h5 class="header-txt">Поточна погода</h5>
+                            </div>
+                            <div class="main-box-item container-option">
+                                <div class="option">
+                                    <h3 data-city=""></h3>
+                                    <h4 data-date=""></h4>
+                                </div>
+                            </div>
+                            <div class="main-box-item container-option">
+                                <div class="option">
+                                    <h3 data-temp></h3>
+                                    <h4 data-desc></h4>
+                                </div>
+                            </div>
+                            <div class="main-box-item co-icon">
+                                <img class="dayly-time-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAKXUExURUdwTECAv3C403C30gCAgAAAAG2003C301VVqnC41HK303K21GGqwm+10nG302iuxXK20WOqxnG20mSxyFukyHG40nK202+20XC203Cvz2aqu2uy0HG00W6z02+3002Zs3C20m+10lWOxnC41HG30XC21GSt0XG40m+203K31Gu10XC203C40nC20nC203C203C202ywzHC202+103K31FWVv3K403C203C30m630VWAqnC402+20HC30nG41Giq0G+103G303C10jOZmXC402640nC20nC302+10m600nC31Gm0y3C20nG41Gu10HC30mqqymmxy3C00XK202aqzHC303C30m+10m610HG40mCfv3G20W2z0GatzHG21G+302+20nC203Cvz2+20W+40m+20myy0W210XC10G2z0W+303C202+30nG10nG40nG203G30m+00W630XG303G302+30HG20nK00HC203C30k6dxHG103C31G+00mu10kmStnG31G6102uz0m+10nG00W63z3G203C302y2znG402+10XCy0WqwynG20m2yzmq0zWyzzG2zzm60z22x0HG40mewznG1026zz3G21HG303C10nC20nC30nC20l2iuW6403G40m+30nC20m+403G203G20nC30nG202utznC30nC31HC00HG302+10XC20nG203C00HC203G302+303C203G30nC11HC20nC403C203G20mqz0HC30my102+3z3C20220znC303C20nC30m+30XG303G303G30nG20nG30m+31Gi0y3C302qxzXK30XG103G303C20m220nC302+xzXCfv3G303G20nC303G20W220G22zHK41IOuyJ8AAADcdFJOUwAE87QCAUv8A/7V/RVa+haWEtkXDvvyXvUwDytfUa0Ky4MJ4ZGZHN5z5TfTncGEyrkt8UzDDPCy31gG71em2xtuwHIFz3avm3Ez+CKPySbCGCd0sx6i1IdhpQh6NhlNuJPcIJeIfiFZXVSY1nhP6eDkTkPQ9EfuXNqgDZyxdz4H+Wg5Zz1Ktb9J7XVCHcg/KSgvOjHMKr4lztJgkrDjC1a3VVConrzG6x+NlGLqU4KnUmm7xaGqZOi6bWw8nzQ1xESLpM1q99j2rtd8LOIkeZXnvVvsLhCKx+aaRiNtnt4wAAAEa0lEQVQYGe3BY2MrCRgF4NM2aZLatt1e+/batm3btm2tbdu2fX7M7ryTtGlv0mQmM9kv8zywWCwWi8VisVgsetlGb5oxdElZUhr+B3G9FjRmUdxA2KVWNbrYYhDCy7kyKp3epiCcIm71Z1u1CKcVC9ne7wifccd5vy4Il4ivR7HVn7f/oohDmKTWs0Xs5L9tmE5FT4TJpWp6OOr+wX9mUjEf4bEigR4FEyGaqLiNsDjoolvPo3BrpGIvwqGKHrsL4RFDxesIg5foltELrVKoeA7mO+GgqvQbeEmhIh+my46k6soEeBtCRT7MltaTqsYctPEBFZkw28dUFeWgrWFUjIDJllNVmYh2kqj4COZK7E7R/TzaO0XFHphrN1UP4z5rqVgIU12OpfgB9xtNEQczjaf4fBZ82EbFizDROao2wZcoKh6FiaIo+sGnQVQ8EQHTXHVRkbAMPuVS5MM05RTl8GMHFQ/CLL23UeF4En40UFyESeZR9IA/1ykKYJJ+FCfg13GKIzCFM4OKN2zway3FkAiY4T2K4fDPtppiKcxQRRGNDvSlSDgEE/SgwtENHbCfpdiQCONVU7EZHbrsoBhbCKPdo1iMjpVRdaw3DJZNMQAdS6umanJvGOshii4I4Eg6VddyYKgBFLkIZBLdpl2AkWZTzEVAw+i2JQ8Gmk6RhoB2FdHj1W4wzAIKJwJLrqXHhngYJYmiBEGY0J8tumbDGGMo4hCMiptsEfva+zBCA8VoBCVtPr0MjLYhZCMoRiI4EavorXpMDUIUT9EXwcrrzDYqxxzdhRBcoliKoC2qZzuxN+tGbJ1YAl1SKWYieLZJGfQlcv3qIVeK/hiYB02epSIFWqSuctC/Z6BJE0UzNMmd7KI/2dDke4rt0Oj84iz6NGowNKmhmArNkofW0ofx0MbZmYqMQugwbvYNtrcGGg2jiIc+ZzLrpjnopRM0WknRBP3uzclsmFpPUQqt9vehwtUJoZlBUQzNyileQEhm3aXCtQiajaRwXEcoZlO8CR2aKPYgBFOyKKKhwz6qukC/OxRF0KUrRWUJ9FpOVTR0meOiGA6d5p6keBw6lVP1M3RxXqNwXIROyb9QRF6FHg1UPQXdtlP1bQW06+WiWN8N+r1LVUwytHpnFEVCDUJQGEPVJ4nQZk5nqqoQktwMqvovgxY1fagqsCM0pw9Q9eMhBG9eFlWvlCBUD8RSlT7JjuDY1zio+ioZoTvootuxCgQjNYpuKWdghPgEukWeikBAeSfptjkRxti6hR4xfW3o0Lmx9Bj/G4wyspItUmbMgj+2jQPZ4unBME5OAVt1H77PDh9+nV7KFl9kwlhvZdHLukcOT3SilbPTrbq79NJ1HIw25Q7bOhDzZVnx3k8HFSdFxXzGNiLftsME0TsYlPSkCTCHM34aA0qf+R3MY89/OZYdWVfcDJM1D62lH32mbtyPcKjI3FnKdiIfe/7DwQijuNOHl+yMqj879qce/coGRF9wwmKxWCwWi8VisejzLzCvBy9tB/byAAAAAElFTkSuQmCC" alt="day-night">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="side-box">
+                    <div class="main-box-item main-box-header">
+                        <h5 class="header-txt-2">Погодні умови</h5>
+                    </div>
+                    <div class="main-box-item parameter">
+                        <div class="main-box-item param-top">
+                            <div class="param-icon">
+                                <svg class="param-svg" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ThermostatIcon"><path d="M15 13V5c0-1.66-1.34-3-3-3S9 3.34 9 5v8c-1.21.91-2 2.37-2 4 0 2.76 2.24 5 5 5s5-2.24 5-5c0-1.63-.79-3.09-2-4zm-4-2V5c0-.55.45-1 1-1s1 .45 1 1v1h-1v1h1v2h-1v1h1v1h-2z"></path></svg>
+                            </div>
+                            <p class="param-description">Відчувається</p>
+                        </div>
+                        <div class="main-box-item param-bottom">
+                            <div data-feels></div>
+                        </div>
+                    </div>
+                    <div class="main-box-item parameter">
+                        <div class="main-box-item param-top">
+                            <div class="param-icon">
+                                <svg class="param-svg" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="AirIcon"><path d="M14.5 17c0 1.65-1.35 3-3 3s-3-1.35-3-3h2c0 .55.45 1 1 1s1-.45 1-1-.45-1-1-1H2v-2h9.5c1.65 0 3 1.35 3 3zM19 6.5C19 4.57 17.43 3 15.5 3S12 4.57 12 6.5h2c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5S16.33 8 15.5 8H2v2h13.5c1.93 0 3.5-1.57 3.5-3.5zm-.5 4.5H2v2h16.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5v2c1.93 0 3.5-1.57 3.5-3.5S20.43 11 18.5 11z"></path></svg>
+                            </div>
+                            <p class="param-description">Вітер</p>
+                        </div>
+                        <div class="main-box-item param-bottom">
+                            <div data-speed></div>
+                        </div>
+                    </div>
+                    <div class="main-box-item parameter">
+                        <div class="main-box-item param-top">
+                            <div class="param-icon">
+                                <svg class="param-svg" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="FilterDramaIcon"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.61 5.64 5.36 8.04 2.35 8.36 0 10.9 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4h2c0-2.76-1.86-5.08-4.4-5.78C8.61 6.88 10.2 6 12 6c3.03 0 5.5 2.47 5.5 5.5v.5H19c1.65 0 3 1.35 3 3s-1.35 3-3 3z"></path></svg>
+                            </div>
+                            <p class="param-description">Хмарність</p>
+                        </div>
+                        <div class="main-box-item param-bottom">
+                            <div data-clouds></div>
+                        </div>
+                    </div>
+                    <div class="main-box-item parameter">
+                        <div class="main-box-item param-top">
+                            <div class="param-icon">
+                                <svg class="param-svg" opacity=".7" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 132.9 135.7" xml:space="preserve" class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8feus5" aria-hidden="true"><style>.st0{fill:#fff}</style><path class="st0" d="M45.5 121.7C20.3 121.4 2.9 98.4 9.6 74c5.9-21.4 19-38.6 32.5-55.6 2.8-3.5 4.9-3.7 7.8-.1 13.4 17 26.6 34.2 32.5 55.6 6.9 24.9-11.2 48.2-36.9 47.8zm.6-49.3c7.5 0 17.3.9 20.9-4.8 3.4-5.4-3.8-12.5-7.3-18.5-13.6-23.4-13.8-23.5-27.5.1-3.4 5.9-10.8 13-7.2 18.5 3.8 5.6 13.6 4.7 21.1 4.7zM110.3 23c-2.6 0-5.2-.1-7.7 0-2.8.1-4.9-.2-4.9-4-.1-3.9 1.3-5.2 5.1-5 5.5.2 11.1.1 16.6 0 3.3-.1 5.5.2 5.5 4.6 0 4.5-2.5 4.5-5.6 4.4-3.1-.1-6.1 0-9 0zM110.2 71.7c-2.6 0-5.2-.1-7.7 0-2.8.1-4.9-.2-4.9-4-.1-3.9 1.3-5.2 5.1-5 5.5.2 11.1.1 16.6 0 3.3-.1 5.5.2 5.5 4.6 0 4.5-2.5 4.5-5.6 4.4-3.1-.1-6.1 0-9 0zM110.2 121.6c-2.6 0-5.2-.1-7.7 0-2.8.1-4.9-.2-4.9-4-.1-3.9 1.3-5.2 5.1-5 5.5.2 11.1.1 16.6 0 3.3-.1 5.5.2 5.5 4.6 0 4.5-2.5 4.5-5.6 4.4h-9zM113.8 103.5h-5.6c-2.1.1-3.5-.2-3.6-2.9-.1-2.8.9-3.8 3.7-3.7 4 .2 8.1.1 12.1 0 2.4 0 4 .1 4 3.3 0 3.3-1.8 3.3-4.1 3.2-2.2.1-4.4.1-6.5.1zM113.8 53.8h-5.6c-2.1.1-3.5-.2-3.6-2.9-.1-2.8.9-3.8 3.7-3.7 4 .2 8.1.1 12.1 0 2.4 0 4 .1 4 3.3 0 3.3-1.8 3.3-4.1 3.2-2.2.1-4.4.1-6.5.1zM113.8 87.9h-5.6c-2.1.1-3.5-.2-3.6-2.9-.1-2.8.9-3.8 3.7-3.7 4 .2 8.1.1 12.1 0 2.4 0 4 .1 4 3.3 0 3.3-1.8 3.3-4.1 3.2-2.2 0-4.4.1-6.5.1zM113.8 38.4h-5.6c-2.1.1-3.5-.2-3.6-2.9-.1-2.8.9-3.8 3.7-3.7 4 .2 8.1.1 12.1 0 2.4 0 4 .1 4 3.3 0 3.3-1.8 3.3-4.1 3.2-2.2.1-4.4.1-6.5.1z"/></svg>
+                            </div>
+                            <p class="param-description">Вологість</p>
+                        </div>
+                        <div class="main-box-item param-bottom">
+                            <div data-humidity></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="side-box">
+                    <div class="main-box-item main-box-header">
+                        <h5 class="header-txt-2">Прогноз на сьогодні</h5>
+                    </div>
+                    <div class="main-box-item time-weather-box">
+                        <div class="main-box-item option">
+                            <div class="opt-inner">
+                                <h3 class="time">6:00</h3>
+                                <div class="css-1ikwdpn"><img class="css-14eows7" alt="weather" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFR3BM////////////////////////////////////////////////////////////////z9GKYQAAABB0Uk5TAM+f3+9gMECAECC/cFCPr3ODawMAAAKgSURBVHja7VrL2qsgDJR7QNC8/9OehdevvwUUYs8is8dMITNJoMPAYDAYDAaDwWAwGAwGowu8SwAAzv0kepIKd4gpvRs9TBo/oOV7G+ElXkKYd+JHjd8gXtgFP2IO0hPHt6efr2aIzkWYT+mIypLGN3t8BeGUlFEcFCgzwezh/0Sx8gUGe3y41OZIzSCVjnnXR788cBEAAKLzx+eFL6ao7qMFM5+ze9d67uN+Tca5h9+oa6/J/zi/rmquDVZcG422dUahuun9A6lWKqaP3j5Rc7aLGkUPvSHOxg3DYI3U9dkdmqUYtv2Xh9t60NX7unji9JzAeOk3PsrK1A6NaWiq9JbDoqDwdLlqjT/EJh2kdju33ytWdQpBk4wREXF8uHiRQFs1GRucwPUoJouOnq2FHi0FNBBYJOR+RmD10eFnBMYuBOTjj2yt7dAjCe9byTH1NBJQz7wkHV1I4/i2de+3ysF55hVtBI5+QsRqR/PiRuNXwHRuIsHfjX+DddZL9obe3YmvIQytCJ+dpKmWP049Rpr499agzrlQd71qcvGYrKaqPdPd7xaCrDuFsfdMezFh2WIHhZFmqJdla5FdprkSg1hqwsguVlaJf5+qEu0G7Eds8sY50RFYD0HkNUB527zKPGSLdyAksBYHk5sikDJ+4ZRfIJCyo9ILBNz/TUCQFYJKAjO5DNcOYco2A5KSwJyVoe15vZurNiE/RhC+M5hCtQHqLVCFauM1bRYAlsweSB861mqcuzLa7thJGGyPGLZsFCRt4RZ/qjomHAOJBSGqUorvDbzs6clG1Y+7x3CuJLgOSDDrW0+JEsmg67LbaKL41c/JYSSJf2fidv0pyJu6CrEjByHNowITln/HZJGKKiDt8xkMBoPBYDAYDAaD0Yp/U/9kFCDYt94AAAAASUVORK5CYII="></div>
+                                <h3 class="css-4cdf92">25 °C</h3>
+                            
+                            </div>
+                        </div>
+                        <div class="main-box-item option">
+                            <div class="opt-inner">
+                                <h3 class="time">9:00</h3>
+                                <div class="css-1ikwdpn"><img class="css-14eows7" alt="weather" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFR3BM////////////////////////////////////////////////////////////////z9GKYQAAABB0Uk5TAM+f3+9gMECAECC/cFCPr3ODawMAAAKgSURBVHja7VrL2qsgDJR7QNC8/9OehdevvwUUYs8is8dMITNJoMPAYDAYDAaDwWAwGAwGowu8SwAAzv0kepIKd4gpvRs9TBo/oOV7G+ElXkKYd+JHjd8gXtgFP2IO0hPHt6efr2aIzkWYT+mIypLGN3t8BeGUlFEcFCgzwezh/0Sx8gUGe3y41OZIzSCVjnnXR788cBEAAKLzx+eFL6ao7qMFM5+ze9d67uN+Tca5h9+oa6/J/zi/rmquDVZcG422dUahuun9A6lWKqaP3j5Rc7aLGkUPvSHOxg3DYI3U9dkdmqUYtv2Xh9t60NX7unji9JzAeOk3PsrK1A6NaWiq9JbDoqDwdLlqjT/EJh2kdju33ytWdQpBk4wREXF8uHiRQFs1GRucwPUoJouOnq2FHi0FNBBYJOR+RmD10eFnBMYuBOTjj2yt7dAjCe9byTH1NBJQz7wkHV1I4/i2de+3ysF55hVtBI5+QsRqR/PiRuNXwHRuIsHfjX+DddZL9obe3YmvIQytCJ+dpKmWP049Rpr499agzrlQd71qcvGYrKaqPdPd7xaCrDuFsfdMezFh2WIHhZFmqJdla5FdprkSg1hqwsguVlaJf5+qEu0G7Eds8sY50RFYD0HkNUB527zKPGSLdyAksBYHk5sikDJ+4ZRfIJCyo9ILBNz/TUCQFYJKAjO5DNcOYco2A5KSwJyVoe15vZurNiE/RhC+M5hCtQHqLVCFauM1bRYAlsweSB861mqcuzLa7thJGGyPGLZsFCRt4RZ/qjomHAOJBSGqUorvDbzs6clG1Y+7x3CuJLgOSDDrW0+JEsmg67LbaKL41c/JYSSJf2fidv0pyJu6CrEjByHNowITln/HZJGKKiDt8xkMBoPBYDAYDAaD0Yp/U/9kFCDYt94AAAAASUVORK5CYII="></div>
+                                <h3 class="css-4cdf92">25 °C</h3>
 
+                            </div>
+                        </div>
+                        <div class="main-box-item option">
+                            <div class="opt-inner">
+                                <h3 class="time">12:00</h3>
+                                <div class="css-1ikwdpn"><img class="css-14eows7" alt="weather" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFR3BM////////////////////////////////////////////////////////////////z9GKYQAAABB0Uk5TAM+f3+9gMECAECC/cFCPr3ODawMAAAKgSURBVHja7VrL2qsgDJR7QNC8/9OehdevvwUUYs8is8dMITNJoMPAYDAYDAaDwWAwGAwGowu8SwAAzv0kepIKd4gpvRs9TBo/oOV7G+ElXkKYd+JHjd8gXtgFP2IO0hPHt6efr2aIzkWYT+mIypLGN3t8BeGUlFEcFCgzwezh/0Sx8gUGe3y41OZIzSCVjnnXR788cBEAAKLzx+eFL6ao7qMFM5+ze9d67uN+Tca5h9+oa6/J/zi/rmquDVZcG422dUahuun9A6lWKqaP3j5Rc7aLGkUPvSHOxg3DYI3U9dkdmqUYtv2Xh9t60NX7unji9JzAeOk3PsrK1A6NaWiq9JbDoqDwdLlqjT/EJh2kdju33ytWdQpBk4wREXF8uHiRQFs1GRucwPUoJouOnq2FHi0FNBBYJOR+RmD10eFnBMYuBOTjj2yt7dAjCe9byTH1NBJQz7wkHV1I4/i2de+3ysF55hVtBI5+QsRqR/PiRuNXwHRuIsHfjX+DddZL9obe3YmvIQytCJ+dpKmWP049Rpr499agzrlQd71qcvGYrKaqPdPd7xaCrDuFsfdMezFh2WIHhZFmqJdla5FdprkSg1hqwsguVlaJf5+qEu0G7Eds8sY50RFYD0HkNUB527zKPGSLdyAksBYHk5sikDJ+4ZRfIJCyo9ILBNz/TUCQFYJKAjO5DNcOYco2A5KSwJyVoe15vZurNiE/RhC+M5hCtQHqLVCFauM1bRYAlsweSB861mqcuzLa7thJGGyPGLZsFCRt4RZ/qjomHAOJBSGqUorvDbzs6clG1Y+7x3CuJLgOSDDrW0+JEsmg67LbaKL41c/JYSSJf2fidv0pyJu6CrEjByHNowITln/HZJGKKiDt8xkMBoPBYDAYDAaD0Yp/U/9kFCDYt94AAAAASUVORK5CYII="></div>
+                                <h3 class="css-4cdf92">25 °C</h3>
 
+                            </div>
+                        </div>
+                        <div class="main-box-item option">
+                            <div class="opt-inner">
+                                <h3 class="time">15:00</h3>
+                                <div class="css-1ikwdpn"><img class="css-14eows7" alt="weather" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFR3BM////////////////////////////////////////////////////////////////z9GKYQAAABB0Uk5TAM+f3+9gMECAECC/cFCPr3ODawMAAAKgSURBVHja7VrL2qsgDJR7QNC8/9OehdevvwUUYs8is8dMITNJoMPAYDAYDAaDwWAwGAwGowu8SwAAzv0kepIKd4gpvRs9TBo/oOV7G+ElXkKYd+JHjd8gXtgFP2IO0hPHt6efr2aIzkWYT+mIypLGN3t8BeGUlFEcFCgzwezh/0Sx8gUGe3y41OZIzSCVjnnXR788cBEAAKLzx+eFL6ao7qMFM5+ze9d67uN+Tca5h9+oa6/J/zi/rmquDVZcG422dUahuun9A6lWKqaP3j5Rc7aLGkUPvSHOxg3DYI3U9dkdmqUYtv2Xh9t60NX7unji9JzAeOk3PsrK1A6NaWiq9JbDoqDwdLlqjT/EJh2kdju33ytWdQpBk4wREXF8uHiRQFs1GRucwPUoJouOnq2FHi0FNBBYJOR+RmD10eFnBMYuBOTjj2yt7dAjCe9byTH1NBJQz7wkHV1I4/i2de+3ysF55hVtBI5+QsRqR/PiRuNXwHRuIsHfjX+DddZL9obe3YmvIQytCJ+dpKmWP049Rpr499agzrlQd71qcvGYrKaqPdPd7xaCrDuFsfdMezFh2WIHhZFmqJdla5FdprkSg1hqwsguVlaJf5+qEu0G7Eds8sY50RFYD0HkNUB527zKPGSLdyAksBYHk5sikDJ+4ZRfIJCyo9ILBNz/TUCQFYJKAjO5DNcOYco2A5KSwJyVoe15vZurNiE/RhC+M5hCtQHqLVCFauM1bRYAlsweSB861mqcuzLa7thJGGyPGLZsFCRt4RZ/qjomHAOJBSGqUorvDbzs6clG1Y+7x3CuJLgOSDDrW0+JEsmg67LbaKL41c/JYSSJf2fidv0pyJu6CrEjByHNowITln/HZJGKKiDt8xkMBoPBYDAYDAaD0Yp/U/9kFCDYt94AAAAASUVORK5CYII="></div>
+                                <h3 class="css-4cdf92">25 °C</h3>
 
+                            </div>
+                        </div>
+                        <div class="main-box-item option">
+                            <div class="opt-inner">
+                                <h3 class="time">18:00</h3>
+                                <div class="css-1ikwdpn"><img class="css-14eows7" alt="weather" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFR3BM////////////////////////////////////////////////////////////////z9GKYQAAABB0Uk5TAM+f3+9gMECAECC/cFCPr3ODawMAAAKgSURBVHja7VrL2qsgDJR7QNC8/9OehdevvwUUYs8is8dMITNJoMPAYDAYDAaDwWAwGAwGowu8SwAAzv0kepIKd4gpvRs9TBo/oOV7G+ElXkKYd+JHjd8gXtgFP2IO0hPHt6efr2aIzkWYT+mIypLGN3t8BeGUlFEcFCgzwezh/0Sx8gUGe3y41OZIzSCVjnnXR788cBEAAKLzx+eFL6ao7qMFM5+ze9d67uN+Tca5h9+oa6/J/zi/rmquDVZcG422dUahuun9A6lWKqaP3j5Rc7aLGkUPvSHOxg3DYI3U9dkdmqUYtv2Xh9t60NX7unji9JzAeOk3PsrK1A6NaWiq9JbDoqDwdLlqjT/EJh2kdju33ytWdQpBk4wREXF8uHiRQFs1GRucwPUoJouOnq2FHi0FNBBYJOR+RmD10eFnBMYuBOTjj2yt7dAjCe9byTH1NBJQz7wkHV1I4/i2de+3ysF55hVtBI5+QsRqR/PiRuNXwHRuIsHfjX+DddZL9obe3YmvIQytCJ+dpKmWP049Rpr499agzrlQd71qcvGYrKaqPdPd7xaCrDuFsfdMezFh2WIHhZFmqJdla5FdprkSg1hqwsguVlaJf5+qEu0G7Eds8sY50RFYD0HkNUB527zKPGSLdyAksBYHk5sikDJ+4ZRfIJCyo9ILBNz/TUCQFYJKAjO5DNcOYco2A5KSwJyVoe15vZurNiE/RhC+M5hCtQHqLVCFauM1bRYAlsweSB861mqcuzLa7thJGGyPGLZsFCRt4RZ/qjomHAOJBSGqUorvDbzs6clG1Y+7x3CuJLgOSDDrW0+JEsmg67LbaKL41c/JYSSJf2fidv0pyJu6CrEjByHNowITln/HZJGKKiDt8xkMBoPBYDAYDAaD0Yp/U/9kFCDYt94AAAAASUVORK5CYII="></div>
+                                <h3 class="css-4cdf92">25 °C</h3>
+
+                            </div>
+                        </div>
+                        <div class="main-box-item option">
+                            <div class="opt-inner">
+                                <h3 class="time">21:00</h3>
+                                <div class="css-1ikwdpn"><img class="css-14eows7" alt="weather" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFR3BM////////////////////////////////////////////////////////////////z9GKYQAAABB0Uk5TAM+f3+9gMECAECC/cFCPr3ODawMAAAKgSURBVHja7VrL2qsgDJR7QNC8/9OehdevvwUUYs8is8dMITNJoMPAYDAYDAaDwWAwGAwGowu8SwAAzv0kepIKd4gpvRs9TBo/oOV7G+ElXkKYd+JHjd8gXtgFP2IO0hPHt6efr2aIzkWYT+mIypLGN3t8BeGUlFEcFCgzwezh/0Sx8gUGe3y41OZIzSCVjnnXR788cBEAAKLzx+eFL6ao7qMFM5+ze9d67uN+Tca5h9+oa6/J/zi/rmquDVZcG422dUahuun9A6lWKqaP3j5Rc7aLGkUPvSHOxg3DYI3U9dkdmqUYtv2Xh9t60NX7unji9JzAeOk3PsrK1A6NaWiq9JbDoqDwdLlqjT/EJh2kdju33ytWdQpBk4wREXF8uHiRQFs1GRucwPUoJouOnq2FHi0FNBBYJOR+RmD10eFnBMYuBOTjj2yt7dAjCe9byTH1NBJQz7wkHV1I4/i2de+3ysF55hVtBI5+QsRqR/PiRuNXwHRuIsHfjX+DddZL9obe3YmvIQytCJ+dpKmWP049Rpr499agzrlQd71qcvGYrKaqPdPd7xaCrDuFsfdMezFh2WIHhZFmqJdla5FdprkSg1hqwsguVlaJf5+qEu0G7Eds8sY50RFYD0HkNUB527zKPGSLdyAksBYHk5sikDJ+4ZRfIJCyo9ILBNz/TUCQFYJKAjO5DNcOYco2A5KSwJyVoe15vZurNiE/RhC+M5hCtQHqLVCFauM1bRYAlsweSB861mqcuzLa7thJGGyPGLZsFCRt4RZ/qjomHAOJBSGqUorvDbzs6clG1Y+7x3CuJLgOSDDrW0+JEsmg67LbaKL41c/JYSSJf2fidv0pyJu6CrEjByHNowITln/HZJGKKiDt8xkMBoPBYDAYDAaD0Yp/U/9kFCDYt94AAAAASUVORK5CYII="></div>
+                                <h3 class="css-4cdf92">25 °C</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-box-item info-box-current">
+                <div class="info-box-weekly">
+                    <div class="main-box-item main-box-header">
+                        <h5>Погода на тиждень</h5>
+                    </div>
+                    <div class="main-box-item weekly-box">
+                        
+                    </div>
+                </div>
+            </div>
         </div>
-
-
     </div>
-
-
-    <script src="js/script.js"></script>
+    <script src="./js/WeatherApp.js"></script>
 </body>
 </html>
